@@ -4,14 +4,18 @@ class Main{
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		boolean flag = false;
 		while(sc.hasNextInt()){
 			int n = sc.nextInt();
 			boolean checked[][] = new boolean[2 * n][2 * n];
 			int count[] = {0, 0};
 			count(checked, 0, 0, n, count);
+			if(flag){
+				System.out.println();
+			}
 			System.out.println("In the case n = " + n + ", " + count[1] + " cells contain segments of the circle.");
 			System.out.println("There are " + count[0] + " cells completely contained in the circle.");
-			System.out.println();
+			flag = true;
 		}
 	}
 
